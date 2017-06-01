@@ -1,0 +1,111 @@
+$btn-normal: #4da9c7;
+$btn-hover: #3e92ad;
+$error: #dd2209;
+
+.form-top-error {
+    text-align: center;
+    height: 40px;
+  p {
+    margin: 15px 0 !important;
+  }
+}
+
+.error {
+  color: $error;
+  font-size: 13px;
+  font-family: Gotham-light;
+  font-weight: 100;
+}
+
+.error-wrapper {
+  margin-top: 8px;
+  .error {
+    display: block;
+  }
+}
+
+[role="alert"] {
+  margin-top: 5px;
+}
+
+.form-group {
+  input.ng-invalid.ng-touched {
+    border: 1px solid $error;
+    box-shadow: none;
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(179, 35, 35, 0.6);*/
+  }
+  /*input.ng-valid.ng-touched {
+    border: 1px solid green;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(4, 195, 10, 0.6);
+  }*/
+}
+
+.form-control {
+  border-radius: 2px !important;
+}
+
+.btn {
+  border-radius: 2px !important;
+  background-color: $btn-normal;
+  padding: 6px 40px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $btn-normal;
+  border-color: $btn-normal;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $btn-hover;
+  border-color: $btn-hover;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: $btn-hover;
+  border-color: $btn-hover;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: $btn-hover;
+  border-color: $btn-hover;
+}
+
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:active.focus,
+.btn-primary.active:hover,
+.btn-primary.active:focus,
+.btn-primary.active.focus,
+.open > .btn-primary.dropdown-toggle:hover,
+.open > .btn-primary.dropdown-toggle:focus,
+.open > .btn-primary.dropdown-toggle.focus {
+  color: #fff;
+  background-color: $btn-hover;
+  border-color: $btn-hover;
+}
+
+.gla-dropdown {
+  a,
+  a:hover,
+  a:focus,
+  a:active:hover,
+  a:active:focus {
+    color: #4da9c7;
+    font-family: Gotham-bold;
+    letter-spacing: .5px;
+    text-decoration: none;
+  }
+  .caret {
+    color: #4da9c7;
+  }
+  .dropdown-menu {
+    top: 18px;
+  }
+}

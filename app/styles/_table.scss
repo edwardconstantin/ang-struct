@@ -1,0 +1,48 @@
+.st-sort-ascent:after {
+  content: '\25B2';
+}
+
+.st-sort-descent:after {
+  content: '\25BC';
+}
+
+table.table {
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #dddddd;
+  border-collapse: collapse !important;
+  border-radius: 1px;
+  background-color: white !important;
+}
+
+.thead-inverse th {
+  color: #fff;
+  background-color: #4a4d4e;
+  vertical-align: middle;
+}
+
+.is-table-row {
+  display: table;
+  margin: 0;
+  width: 100%;
+}
+
+.is-table-row [class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > tfoot > tr > td {
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.thead-inverse th {
+    color: #aebecb;
+    background-color: #3e4e5c;
+}

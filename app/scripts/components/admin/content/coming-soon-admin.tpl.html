@@ -1,0 +1,21 @@
+<div ui-view>
+
+  <div class="row" style="margin-top:30px">
+
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <form novalidate class="form-gla" role="form">
+
+        <div class="form-group">
+          <label>New 'Coming Soon' message</label>
+          <input type="text" class="form-control" ng-model="csoon.message" required/>
+        </div>
+
+        <button type="button" class="btn center-block btn-primary" ng-click="csoon.submit()">Save</button>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>

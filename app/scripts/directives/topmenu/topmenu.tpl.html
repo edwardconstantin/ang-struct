@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="visible-xs navbar-menu-text">MENU</span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a href ui-sref="user.programmes">PROGRAMMES</a></li>
+        <li ui-sref-active="active"><a href ui-sref="user.projects">PROJECTS</a></li>
+        <li ng-class="{ active: $state.includes('admin'), 'open': isOpen }" class="dropdown" ng-mouseleave="isOpen = false" ng-mouseover="isOpen = true">
+          <a ng-if="isAdmin" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN<span class="caret"></span></a>
+          <ul class="dropdown-menu" ang-show="isOpen">
+            <li ui-sref-active="active"><a href ui-sref="admin.content">Update content</a></li>
+            <li ui-sref-active="active"><a href ui-sref="admin.organisations">Manage organisations</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href ng-click="admin.logout()">Log out</a></li>
+          </ul>
+        </li>¬
+      </ul>-->
+
+    </div>
+
+  </div>
+</nav>

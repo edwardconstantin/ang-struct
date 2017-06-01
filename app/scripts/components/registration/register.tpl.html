@@ -1,0 +1,135 @@
+<div class="row registration" ng-if="!register.done">
+
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <h3>Register to create your account</h3>
+    <hr>
+  </div>
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 col-xs-offset-1 form-top-error">
+    <p class="error" ng-if="register.errors">Sorry, we were unable to complete your registration. Please check your details and try again</p>
+  </div>
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-2 col-md-3"></div>
+  <div class="col-xs-8 col-md-6">
+
+    <form class="form-gla" role="form" name="regForm">
+      <div class="row">
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-fname">First name</label>
+            <input id="login-fname" type="text" name="fname" class="form-control" ng-model="regdata.firstName" placeholder="First name" required autofocus/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.fname.$touched">
+              <span class="error" ng-show="regForm.fname.$error.required">Enter your first name</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-sname">Surname</label>
+            <input id="login-sname" type="text" name="sname" class="form-control" ng-model="regdata.lastName" placeholder="Surname" required/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.sname.$touched">
+              <span class="error" ng-show="regForm.sname.$error.required">Enter your surname</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="login-email">Email address</label>
+            <input id="login-email" type="email" name="email" class="form-control" ng-model="regdata.email"
+                   placeholder="Organisation email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required autofocus/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.email.$touched">
+              <span class="error" ng-show="regForm.email.$error.required">Enter your email address</span>
+              <span class="error" ng-show="regForm.email.$error.pattern">Check your email</span>
+              <span class="error" ng-show="register.errors.username">Email address already registred</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-phone">Contact number</label>
+            <input id="login-phone" type="text" name="phone" ng-maxlength="11" class="form-control" ng-model="regdata.phoneNumber" placeholder="Contact number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.phone.$touched">
+              <span class="error" ng-show="regForm.phone.$error.required">Enter your contact number</span>
+              <span class="error" ng-show="regForm.phone.$error.maxlength">Check your contact number</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-pass">Create password</label>
+            <input id="login-pass" type="password" ng-password-strength="passwd" ng-minlength="8" strength="50" name="pass" class="form-control" ng-model="regdata.password" placeholder="At least 8 characters" required/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.pass.$touched">
+              <span class="error" ng-show="regForm.pass.$error.required">Enter a password</span>
+              <span class="error" ng-show="regForm.pass.$error.minlength">Enter at least 8 characters</span>
+            </div>
+            <div>{{passwd}}</div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-passw">Re-enter password</label>
+            <input id="login-passw" type="password" name="passv" class="form-control" ng-model="regdata.passwordConfirmation" placeholder="Re-enter password" match="regdata.password" required/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.passv.$touched">
+              <span class="error" ng-show="regForm.passv.$error.required">Confirm your password</span>
+              <span class="error" ng-show="regForm.passv.$error.match">Password doesn't match!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="login-imsnum">IMS number</label>
+            <input id="login-imsnum" type="text" name="imsnum" class="form-control" ng-minlength="3" ng-model="regdata.imsNumber" placeholder="Contact number" ng-change="register.checkImsNumber()" required/>
+            <div class="error-wrapper" role="alert" ng-show="regForm.$submitted || regForm.imsnum.$touched">
+              <span class="error" ng-show="regForm.imsnum.$error.required">Enter your IMS number</span>
+              <span class="error" ng-show="regForm.imsnum.$error.minlength">Enter at least 3 characters</span>
+              <span class="error" ng-show="register.imsNumberValidationError">IMS not recognised</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6" ng-if="register.imsNumberOrgName && !register.imsNumberValidationError">
+          <div class="ims-number-org-name">
+            {{register.imsNumberOrgName}}
+          </div>
+        </div>
+
+        <div class="col-xs-12 text-center mtop30">
+          <button ng-disabled="
+            regForm.fname.$error.required ||
+            regForm.surname.$error.required ||
+            regForm.email.$error.required ||
+            regForm.email.$error.email ||
+            regForm.phone.$error.required ||
+            regForm.pass.$error.required ||
+            regForm.pass.$error.minlength ||
+            regForm.passv.$error.required ||
+            regForm.passv.$error.match ||
+            regForm.imsnum.$error.required ||
+            regForm.imsnum.$error.minlength ||
+            register.imsNumberValidationError" class="btn btn-md btn-primary" ng-click="register.submit()">REGISTER</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="col-xs-3"></div>
+</div>
+
+<div class="thank-you" ng-if="register.done">
+  <h3>Thank you for registering!</h2>
+  <h4>We will let you know when your account will be ready to use.</h3>
+</div>

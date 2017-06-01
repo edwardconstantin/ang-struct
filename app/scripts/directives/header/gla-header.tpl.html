@@ -1,0 +1,28 @@
+<header>
+  <div class="gla-header">
+    <div class="row is-table-row">
+
+      <div class="col-xs-4">
+        <div class="gla-mayor"></div>
+      </div>
+
+      <div class="col-xs-4 gla-ops">
+        <span>OPEN PROJECT SYSTEM</span>
+      </div>
+
+      <div class="col-xs-4">
+        <div class="gla-header-user" ng-if="!userData.loggedOn">
+          <a ui-sref="registration" ui-sref-opts="{reload: true}" id="hdr-register">Register</a>
+          <a  ui-sref="logon" id="hdr-login">Login</a>
+        </div>
+        <div class="gla-header-user" ng-if="userData.loggedOn">
+          <div id="hdr-username">{{ userData.username }}</div>
+          <div id="hdr-organisation">
+            {{ userData.primaryRole }}<span ng-if="userData.primaryRole && userData.organisation">,</span> {{ userData.organisation }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

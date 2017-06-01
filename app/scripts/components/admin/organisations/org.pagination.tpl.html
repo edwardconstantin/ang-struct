@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="pull-right" ng-show="displayPagination()">
+      <ul uib-pagination max-size="3" items-per-page="itemsPerPage" total-items="totalItems" ng-model="currentPage"
+          class="pagination-sm pull-right" boundary-link-numbers="true" force-ellipses="true" ng-change="pageChanged(currentPage)">
+      </ul>
+    </div>
+    <div class="pull-right pagination-summary">
+      Showing {{indexStart}} - {{indexEnd}} of {{totalItems}}
+    </div>
+  </div>
+</div>

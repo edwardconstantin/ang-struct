@@ -1,0 +1,150 @@
+body {
+  padding: 0;
+  font-family: Gotham-book, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  section {
+    min-height: 100%;
+    height: auto !important;
+    /* footer offset */
+    margin: 0 auto -40px;
+    background-color: #f7f7f7;
+    padding: 85px 15px 40px 15px;
+    letter-spacing: 0.25px;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid #cecece;
+}
+
+h3 {
+  font-family: Gotham-light;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.modal-open .modal {
+  display: flex !important;
+  height: 100%;
+}
+
+body.modal-open .modal .modal-dialog {
+  margin: auto;
+}
+
+.modal-header {
+  font-family: Gotham-medium;
+  border: none;
+  .subheader {
+    margin-top: 10px;
+    font-family: Gotham-book;
+  }
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: center;
+  border-top: none;
+}
+
+.bright-red {
+  color: #dd2209;
+}
+
+.misc {
+  text-align: center;
+}
+
+.dark-bg {
+  background: linear-gradient(#2f363b, #353c42, #2f363b);
+}
+
+.mtop30 {
+  margin-top: 30px;
+}
+
+.gla-wrapper {
+  position: relative;
+  max-width: 1140px;
+  min-width: 720px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.gla-label {
+  font-weight: bold;
+}
+
+.gla-white-label {
+  color: white;
+}
+
+.pagination {
+  margin: 0;
+  font-family: Gotham-bold;
+  li {
+    a {
+      font-size: 14px;
+      background-color: transparent;
+      letter-spacing: 0.5px;
+      border: 0px;
+      color: #4da9c7;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #4da9c7;
+    }
+  }
+  .active {
+    a,
+    a:hover {
+      background-color: #4da9c7;
+      z-index: 0;
+    }
+  }
+  .disabled {
+    a {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.pagination-summary {
+  padding: 4px 12px;
+  text-align: right;
+  .start-end-index {
+    font-weight: bold;
+  }
+}
+
+.sortorder:after {
+  content: '\25b2'; // BLACK UP-POINTING TRIANGLE
+}
+
+.sortorder.reverse:after {
+  content: '\25bc'; // BLACK DOWN-POINTING TRIANGLE
+}

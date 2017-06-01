@@ -1,0 +1,43 @@
+$error: #dd2209;
+
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
+
+@import "gotham";
+@import "global";
+@import "form";
+@import "table";
+@import "../scripts/directives/topmenu/_nav.scss";
+@import "../scripts/directives/header/_header.scss";
+@import "../scripts/directives/footer/_footer.scss";
+@import "../scripts/components/log-on/_login.scss";
+@import "../scripts/components/registration/_registration.scss";
+@import "../scripts/components/admin/organisations/_organisations.scss";
+@import "../scripts/components/user/_user-home.scss";
+@import "../scripts/directives/cookie-warning/_cookie-warning.scss";
+
+.gla-main {
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.gla-banner {
+  padding-top: 12px;
+  max-width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.gla-message {
+  align: center;
+  text-align: center;
+  padding-top: 24px;
+  font-size: 16px;
+}

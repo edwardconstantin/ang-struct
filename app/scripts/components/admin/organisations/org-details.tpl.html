@@ -1,0 +1,108 @@
+<h2>{{org.name}}</h2>
+<table class="table" style="background-color: white;">
+  <td style="width: 50%">
+    <div class="row">
+      <div class="col-xs-6 gla-label">
+        GLA OPS ID:
+      </div>
+      <div class="col-xs-6">
+        {{org.id}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 gla-label">
+        IMS NUMBER:
+      </div>
+      <div class="col-xs-6">
+        {{org.imsNumber}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 gla-label">
+        Registered with housing authority:
+      </div>
+      <div class="col-xs-6">
+        {{org.regulated}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 gla-label">
+        Viability score:
+      </div>
+      <div class="col-xs-6">
+        {{org.viability}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 gla-label">
+        Governance score:
+      </div>
+      <div class="col-xs-6">
+        {{org.governance}}
+      </div>
+    </div>
+  </td>
+  <td style="width: 50%">
+    <div class="row">
+      <div class="col-xs-5 gla-label">
+          CEO:
+      </div>
+      <div class="col-xs-7">
+        <div>{{org.ceoName}}</div>
+      </div>
+      <div class="col-xs-5 gla-label">
+        EMAIL:
+      </div>
+      <div class="col-xs-7">
+        <div>{{org.email}}</div>
+      </div>
+      <div class="col-xs-12 gla-label">
+        Address of organisation
+      </div>
+      <div class="col-xs-12">
+        <div>{{org.address.address1}}</div>
+        <div>{{org.address.address2}}</div>
+        <div>{{org.address.address3}}</div>
+        <div>{{org.address.address4}}</div>
+        <div>{{org.address.address5}}</div>
+        <div>{{org.address.postcode}}</div>
+      </div>
+    </div>
+  </td>
+</table>
+
+<h3>Registrations</h3>
+<div class="row org-user " ng-repeat="user in org.users">
+  <div class="col-xs-9">
+    <div class="row">
+      <div class="col-xs-3 gla-label">
+        Full name:
+      </div>
+      <div class="col-xs-9">
+        {{user.firstName}} {{user.lastName}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 gla-label">
+        Email:
+      </div>
+      <div class="col-xs-9">
+        {{user.username}}
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div ng-if="!user.approved" class="org-user-pending">
+      <button type="button" class="btn btn-md pull-right gla-white-label"
+              ng-click="approve(user)">
+        Approve
+      </button>
+    </div>
+
+    <span ng-if="user.approved" class="org-user-approved pull-right">Approved</span>
+  </div>
+</div>

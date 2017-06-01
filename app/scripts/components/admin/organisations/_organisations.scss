@@ -1,0 +1,50 @@
+.gla-organisations {
+  .reg-stat-label {
+    margin-bottom: 0;
+  }
+  .reg-stat-dropdown {
+    margin-bottom: 15px;
+    display: block
+  }
+  .top-pagination {
+    padding-top: 15px;
+  }
+}
+
+.org-table {
+  /*overflow-y: scroll;*/
+  font-size: 13px;
+  table > thead > tr > th {
+    /*text-align: center;*/
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  table tr{
+    cursor: pointer;
+  }
+
+  .registration-status-pending {
+    font-weight: bold;
+  }
+
+  .registration-status-approved {
+    color: #31ae52;
+  }
+}
+
+.org-user {
+  background-color: white;
+  margin: 20px 0;
+  .row {
+    padding: 5px;
+  }
+}
+
+.org-user-pending {
+  padding-top: 13px;
+}
+
+.org-user-approved {
+  padding: 19px 32px;
+}

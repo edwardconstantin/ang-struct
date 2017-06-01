@@ -1,0 +1,45 @@
+<div class="row login">
+
+  <div class="col-xs-10 col-xs-offset-1">
+      <h3>Login</h3>
+      <hr>
+  </div>
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 col-xs-offset-1 form-top-error">
+      <p class="error" ng-if="logon.error">Sorry, your email and password combination is not recognised</p>
+  </div>
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-3 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+    <form class="form-gla" role="form" name="logonForm">
+
+      <div class="form-group">
+        <label for="login-email">Email address</label>
+        <input id = "login-email" type="email" name="email" class="form-control" ng-model="logon.uname"
+               placeholder="Organisation email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required autofocus/>
+        <div role="alert" ng-show="logonForm.$submitted || logonForm.email.$touched">
+          <span class="error" ng-show="logonForm.email.$error.required">Enter your email</span>
+          <span class="error" ng-show="logonForm.email.$error.pattern">Check your email</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="login-pass">Password</label>
+        <input id="login-pass" type="password" name="pass" class="form-control" ng-model="logon.pass" placeholder="GLA OPS password" required/>
+        <div role="alert" ng-show="logonForm.$submitted || logonForm.pass.$touched">
+          <span class="error" ng-show="logonForm.pass.$error.required">
+            Enter your password
+          </span>
+        </div>
+      </div>
+
+      <div class="text-center mtop30">
+        <button ng-disabled="logonForm.email.$error.required || logonForm.email.$error.email || logonForm.pass.$error.required" type="submit" class="btn btn-md btn-primary" ng-click="logon.submit()">LOGIN</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

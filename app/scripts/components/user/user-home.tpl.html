@@ -1,0 +1,31 @@
+<top-menu></top-menu>
+
+<div ui-view>
+  <div class="text-center user-home_header" ng-if="$ctrl.user.loggedOn">
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-10">
+        <h3>You are logged in to GLA Open Project System</h3>
+        <hr>
+      </div>
+      <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 col-md-3"></div>
+      <div class="col-sm-8 col-md-6">
+        <p class="user-home_message">
+          This service is currently under development and will eventually become GLA's main system for managing grant projects
+        </p>
+        <div class="user-home_unapproved" ng-if="!$ctrl.user.approved">
+          <div class="user-home_unapproved-row">
+            Your registration has not yet been approved. You will receive an email confirming your registration in due course.
+          </div>
+          <div>
+            Please contact GLA if you have any concerns or you have been informed that your registration has been approved.
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2 col-md-3"></div>
+    </div>
+  </div>
+</div>

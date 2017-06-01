@@ -1,0 +1,53 @@
+$header-height: 85px;
+.gla-header {
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 720px;
+  background: url(../images/header.jpg) no-repeat;
+  background-position: center;
+  background-size: 1140px 85px;
+  z-index: 999999999;
+  color: #fff;
+  height: $header-height;
+  max-width: 1140px;
+  .row {
+    height: $header-height;
+  }
+  .gla-ops {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Gotham-book;
+    letter-spacing: 1.5px;
+  }
+  a:hover,
+  a:focus {
+    color: white;
+    text-decoration: underline;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.gla-mayor {
+  height: 16px;
+  background-image: url(../images/logo-mayoral.svg);
+  background-size: 207px 16px;
+  background-repeat: no-repeat;
+}
+
+#hdr-login {
+  margin-left: 30px;
+}
+
+.gla-header-user {
+  font-size: 14px;
+  text-align: right;
+  font-weight: 200;
+}
